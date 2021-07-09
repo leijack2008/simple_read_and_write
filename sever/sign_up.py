@@ -1,17 +1,10 @@
-import socket
-from setting import *
-from time import *
-import threading
 import random
+from setting import*
 with open('userID') as f:
     userID = f.readlines()
 with open('userPASSWORD') as f:
     userPASSWORD = f.readlines()
-s = socket.socket()
-print(userID)
-s.bind((address,port))
-s.listen(5)
-def e(c,addr):
+def sign_up(c,addr):
     while True:
         print(f"{addr}")
         c.send(b"hello")
@@ -35,12 +28,3 @@ def e(c,addr):
                     c.send(b'402')
             else:
                 c.send(b"401")
-while True:
-    a,addr = s.accept()
-    t = threading.Thread(target = e,args=(a,addr))
-    t.start()
-s.close()
-
-
-
-    

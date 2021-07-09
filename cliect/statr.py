@@ -14,7 +14,5 @@ def up():
     s.send(ID.encode())
     s.send(PASSWORD.encode())
     ui = s.recv(1024).decode('utf-8')
-    print(ui)
-    sleep(5)
     s.close()
     return int(ui)

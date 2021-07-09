@@ -1,3 +1,4 @@
 import statr
-statr.up()
+convensionID = statr.up()
+
 
